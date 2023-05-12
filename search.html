@@ -8,6 +8,7 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
     <link rel="stylesheet" type="text/css" href="css/search_product.css" />
+    <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
     <link rel="stylesheet" type="text/css"
         href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
@@ -17,21 +18,26 @@
 </head>
 
 <body id="main">
-
-    <h1>Patient Variant Search</h1>
-    <p> Please enter the patient's date of birth and the rs ID of the variant in question below.</p>
-    <form name="variant_search" id="variant_search" action="">
+    <br>
+    <h1>Computational Modeling Variant Search (CMVR)</h1>
+    <p> Please enter the patient's date of birth and the rsID of the variant below.</p>
+    <form name="variant_search" id="variant_search" action="search_products.cgi">
         <label for="patient_term">Patient DOB:</label>
-        <input name="patient_term" type="date"  required>
+        <input name="patient_term" type="date" >
+        <br>
         <label for="search_term">Variant ID:</label>
-        <input name="search_term" type="search" autofocus="autofocus" placeholder="rs#######"required>
-        <input name="submit" type="submit" id="submit" value="submit">
-
+        <input name="search_term" type="search" autofocus="autofocus" placeholder="rs#######" >
+        <br>
         <p> Please select the data that you would like to be shown:</p>
-        <input type="radio" id="variant" name="data" value="variant" checked/>
+        <input type="radio" id="variant" name="data" value="variant" checked />
         <label for="variant">Variant Data</label><br>
         <input type="radio" id="model" name="data" value="model" />
-        <label for="model">Model Data</label>
+        <label for="model">Model Data</label><br>
+        <input type="radio" id="patient" name="data" value="patient" />
+        <label for="patient">Patient Data</label>
+        <br><br>
+        <input name="submit" type="submit" id="submit" value="Search for Variant">
+    </form>
 
     </form>
 
@@ -39,7 +45,7 @@
         <p>
             <span id='match_count'>0</span> match(es) found.
         </p>
-        <table id='results_table'>
+        <table id='results_table' class="center">
             <thead id='results_header'>
                 <!-- this will be filled in by javascript depending on radio option -->
             </thead>
