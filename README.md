@@ -13,7 +13,7 @@ This tool requires a working browser to run on.
 This tool requires minimal storage, using no more than 1 KB during runs.
 
 ### Usage
-1. Enter the patient's date of birth and the rsID of the variant of interest
+1. Enter the patient's date of birth and the rsID of the variant of interest.
 2. Click the radio button of the data you want: variant, model, or patient data.
    - Variant data is the default search option. It provides the patient name, variant rsID, variant frequency, variant mutation, gene ID, gene name, and gene product. 
    - Model data returns the patient name, variant rsID, internal process ID, process name, internal model ID, and model name.
