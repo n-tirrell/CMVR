@@ -6,7 +6,7 @@ import mysql.connector
 # this function will get the relevant information for the gene variant
 def get_variant_info(cursor, variant, patient):
     qry = """
-            SELECT p.patient_name , v.variant_id,  g.gene_id, g.gene_name, g.gene_product
+            SELECT p.patient_name, v.variant_id, v.var_freq, v.var_mutation, g.gene_id, g.gene_name, g.gene_product
                 FROM variant v
                     JOIN patient_variant pv on pv.variant_id = v.variant_id
                     JOIN patient p on pv.patient_id = p.patient_id
@@ -18,8 +18,8 @@ def get_variant_info(cursor, variant, patient):
 
     results = { 'match_count': 0, 'matches': list()}
 
-    for (patient_name, variant_id, gene_id, gene_name, gene_product) in cursor:
-        results['matches'].append({'Patient Name': patient_name, 'Variant ID': variant_id, 'Gene ID': gene_id, 'Gene Name': gene_name, 'Gene Product': gene_product})
+    for (patient_name, variant_id, var_freq, var_mutation, gene_id, gene_name, gene_product) in cursor:
+        results['matches'].append({'Patient Name': patient_name, 'Variant ID': variant_id, 'Variant Frequency': str(var_freq), 'Variant Mutation': var_mutation, 'Gene ID': gene_id, 'Gene Name': gene_name, 'Gene Product': gene_product})
         results['match_count'] += 1
 
     return results
