@@ -21,7 +21,7 @@ This tool requires minimal storage, using no more than 1 KB during runs.
 3. Click the "Search" button for the results. If the variant rsID is not in the system, then we return "No matches found."
 
 ### Sample Runs
-A sample run using the tool would be as follows:
+A sample run using the tool would be using the following input information:
 
       Patient DOB: 10/13/1989
 
